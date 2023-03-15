@@ -1,0 +1,47 @@
+<h1>Independer zoo</h1>
+
+<h4>Task 1 ___ Sort by:</h4>
+<select #sort (change)="sortBy(sort.value)">
+  <option value="">- select your choice -</option>
+  <option value="age">Age</option>
+  <option value="name">Name (ascending)</option>
+</select>
+
+<hr />
+
+<h4>Task 2 ___ Filter animal type:</h4>
+<div>
+  <input type="radio" name="animalType" id="showAll" checked />
+  <label for="showAll">Show all</label>
+</div>
+<div>
+  <input type="radio" name="animalType" id="dog" />
+  <label for="dog">Dog</label>
+</div>
+<div>
+  <input type="radio" name="animalType" id="cat" />
+  <label for="cat">Cat</label>
+</div>
+<div>
+  <input type="radio" name="animalType" id="lion" />
+  <label for="lion">Lion</label>
+</div>
+<div>
+  <input type="radio" name="animalType" id="bird" />
+  <label for="bird">Bird</label>
+</div>
+
+<hr />
+
+<h4>Task 3 ___ Group by animal type:</h4>
+<div>
+  When this button is clicked, then it will show for example all the dogs first,
+  and then all the cats, and so on.
+</div>
+<button type="button" (click)="groupByAnimalType()">
+  Group by animal type
+</button>
+
+<hr />
+
+<animal-block *ngFor="let animal of animals" [animal]="animal"></animal-block>
